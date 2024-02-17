@@ -13,7 +13,7 @@
     	"name" : user의 Name
     	"nickname" : user의 NickName
     	"phone" : user의 PhoneNumber
-      "email" : user의 E-mail
+        "email" : user의 E-mail
       
     }
     ```
