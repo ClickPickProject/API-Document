@@ -8,12 +8,12 @@
     
     ```jsonc
     {
-    	"user_id" : user의 ID에 해당
+    	"user_id" : user의 ID
     	"password" : user의 Password
     	"name" : user의 Name
     	"nickname" : user의 NickName
     	"phone" : user의 PhoneNumber
-        "email" : user의 E-mail
+    	"email" : user의 Email
       
     }
     ```
