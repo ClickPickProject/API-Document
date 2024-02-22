@@ -8,7 +8,7 @@
     
     ```jsonc
     {
-    	"user_id" : user의 ID (e-mail 형식)
+    	"id" : user의 ID (e-mail 형식)
     	"password" : user의 Password
     	"name" : user의 Name
     	"nickname" : user의 NickName
@@ -39,7 +39,7 @@
     
     ```jsonc
     {
-    	"user_id" : 사용할 ID
+        "user_id" : 사용할 ID
     }
     ```
     
@@ -65,7 +65,7 @@
     
     ```jsonc
     {
-    	"nickname" : 사용할 별명
+        "nickname" : 사용할 별명
     }
     ```
     
@@ -91,7 +91,7 @@
     
     ```jsonc
     {
-    	"phone" : 사용자 전화번호
+        "phone" : 사용자 전화번호
     }
     ```
     
@@ -106,4 +106,60 @@
         
         ```jsonc
         이미 가입된 전화번호 입니다.
+        ```
+        
+- 로그인
+    - **API** : `/api/login`
+    - **Method : POST**
+    - **Body :  raw (json)**
+
+   - **Request**
+    
+    ```jsonc
+    {
+        "id" : 사용자 아이디
+        "password" : 사용자 비밀번호
+    }
+    ```
+    
+    - **Response**
+        - 200 OK
+        
+        ```jsonc
+        로그인 되었습니다.
+        ```
+        
+        - 404 *NOT FOUND*
+        
+        ```jsonc
+        잘못된 아이디 또는 비밀번호 입니다.
+        ```
+        
+- 아이디 찾기
+    - **API** : `/api/login/id`
+    - **Method : POST**
+    - **Body :  raw (json)**
+
+   - **Request**
+    
+    ```jsonc
+    {
+        "name" : 사용자 이름
+        "phone" : 사용자 전화번호
+    }
+    ```
+    
+    - **Response**
+        - 200 OK
+        
+        ```jsonc
+        {
+            "id" : 사용자 아이디
+        }
+        ```
+        
+        - 404 *NOT FOUND*
+        
+        ```jsonc
+        존재하지 않는 전화번호 및 이름입니다.
         ```
