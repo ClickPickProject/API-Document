@@ -8,22 +8,22 @@
     
     ```jsonc
     {
-    	"id" : user의 ID (e-mail 형식)
-    	"password" : user의 Password
-    	"name" : user의 Name
-    	"nickname" : user의 NickName
+    	"id" : user의 ID (e-mail 형식),
+    	"password" : user의 Password,
+    	"name" : user의 Name,
+    	"nickname" : user의 NickName,
     	"phone" : user의 PhoneNumber
     }
     ```
     
     - **Response**
-        - 200 OK
+        - ***200 OK***
         
         ```jsonc
         회원으로 가입되었습니다.
         ```
         
-        - 409 *CONFLICT*
+        - ***409 CONFLICT***
         
         ```jsonc
         이미 가입된 ID 입니다.
@@ -44,13 +44,13 @@
     ```
     
     - **Response**
-        - 200 OK
+        - ***200 OK***
         
         ```jsonc
         사용할 수 있는 ID 입니다.
         ```
         
-        - 409 *CONFLICT*
+        - ***409 CONFLICT***
         
         ```jsonc
         이미 가입된 ID 입니다.
@@ -70,13 +70,13 @@
     ```
     
     - **Response**
-        - 200 OK
+        - ***200 OK***
         
         ```jsonc
         사용할 수 있는 별명 입니다.
         ```
         
-        - 409 *CONFLICT*
+        - ***409 CONFLICT***
         
         ```jsonc
         존재하는 별명입니다.
@@ -96,13 +96,13 @@
     ```
     
     - **Response**
-        - 200 OK
+        - ***200 OK***
         
         ```jsonc
         사용할 수 있는 전화번호입니다.
         ```
         
-        - 409 *CONFLICT*
+        - ***409 CONFLICT***
         
         ```jsonc
         이미 가입된 전화번호 입니다.
@@ -117,19 +117,19 @@
     
     ```jsonc
     {
-        "id" : 사용자 아이디
+        "id" : 사용자 아이디,
         "password" : 사용자 비밀번호
     }
     ```
     
     - **Response**
-        - 200 OK
+        - ***200 OK***
         
         ```jsonc
         로그인 되었습니다.
         ```
         
-        - 404 *NOT FOUND*
+        - ***404 NOT FOUND***
         
         ```jsonc
         잘못된 아이디 또는 비밀번호 입니다.
@@ -144,13 +144,13 @@
     
     ```jsonc
     {
-        "name" : 사용자 이름
+        "name" : 사용자 이름,
         "phone" : 사용자 전화번호
     }
     ```
     
     - **Response**
-        - 200 OK
+        - ***200 OK***
         
         ```jsonc
         {
@@ -158,8 +158,92 @@
         }
         ```
         
-        - 404 *NOT FOUND*
+        - ***404 NOT FOUND***
         
         ```jsonc
         존재하지 않는 전화번호 및 이름입니다.
+        ```
+- 비밀번호 찾기
+    - **API** : `/api/login/password`
+    - **Method : POST**
+    - **Body :  raw (json)**
+
+   - **Request**
+    
+    ```jsonc
+    {
+        "id" : 사용자 아이디,
+        "name" : 사용자 이름,
+        "phone" : 사용자 전화번호
+    }
+    ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        해당 이메일(아이디)로 인증번호를 발송하였습니다.
+        ```
+        
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        존재하지 않는 이메일(아이디) 입니다.
+        ```
+- 인증코드 확인
+    - **API** : `/api/login/id`
+    - **Method : POST**
+    - **Body :  raw (json)**
+
+   - **Request**
+    
+    ```jsonc
+    {
+        "name" : 사용자 이름
+        "phone" : 사용자 전화번호
+    }
+    ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        인증에 성공하였습니다.
+        ```
+        
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        인증번호가 일치하지 않습니다.
+        ```
+- 비밀번호 변경
+    - **API** : `/api/login/id`
+    - **Method : POST**
+    - **Body :  raw (json)**
+
+   - **Request**
+    
+    ```jsonc
+    {
+        "name" : 사용자 이름
+        "phone" : 사용자 전화번호
+    }
+    ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        비밀번호를 변경하였습니다.
+        ```
+        
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        존재하지 않는 이메일(아이디)입니다.
+        ```
+        - ***409 CONFLICT***
+        
+        ```jsonc
+        기존 비밀번호와 동일합니다.
         ```
