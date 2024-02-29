@@ -7,3 +7,4 @@
 
 ## [👨🏻‍💻 Manager API](https://github.com/ClickPickProject/API-Document/tree/main/API/Manager.md)
 
+## [📑 Post API](https://github.com/ClickPickProject/API-Document/tree/main/API/Post.md)
