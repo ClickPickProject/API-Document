@@ -33,8 +33,6 @@
 - ID 중복 체크
     - **API** : `/api/check/userid/{user_id}`
     - **Method : GET**
-    - **Body :  raw (json)**
-
    - **Request**
     
     ```jsonc
@@ -59,8 +57,6 @@
 - 닉네임 중복 체크
     - **API** : `/api/check/nickname/{nickname}`
     - **Method : GET**
-    - **Body :  raw (json)**
-
    - **Request**
     
     ```jsonc
@@ -85,8 +81,6 @@
 - 전화번호 중복 체크
     - **API** : `/api/check/phone/{phone}`
     - **Method : GET**
-    - **Body :  raw (json)**
-
    - **Request**
     
     ```jsonc
