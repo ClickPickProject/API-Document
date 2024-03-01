@@ -53,3 +53,32 @@
         ```jsonc
         사용자가 삭제할 수 없는 게시글입니다.
         ```
+- 게시글 수정
+    - **API** : `/api/post/{post_id}`
+    - **Method : Post**
+    - **Body :  raw (json)**
+    - **Request**
+    
+    ```jsonc
+    {
+        "userId" : 삭제를 진행하는 사용자 ID,
+        "title" : 수정하고자 하는 제목,
+        "content" : 수정하고자 하는 내용,
+        "position" : 위치 정보(null일 경우 ""으로 전송),
+        "hashtag" : 해시태그(null일 경우 ""으로 전송)
+    }
+    ```
+    
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        수정이 완료되었습니다.
+        ```
+        
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        사용자가 수정할 수 없는 게시글입니다.
+        ```
