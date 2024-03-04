@@ -82,3 +82,53 @@
         ```jsonc
         사용자가 수정할 수 없는 게시글입니다.
         ```
+- 게시글 상세 조회
+    - **API** : `/api/post/{post_id}`
+    - **Method : GET**    
+    - **Response**
+      
+        - ***200 OK***
+          
+    ```jsonc
+    {
+        "nickname" : 게시글을 작성한 유저의 닉네임,
+        "title" : 해당 게시글의 제목,
+        "content" : 해당 게시글의 내용,
+        "date" : 해당 게시글의 작성일자,
+        "likeCount" : 해당 게시글의 좋아요 수,
+        "viewCount" : 해당 게시글의 조회수,
+        "position" : 해당 게시글의 등록된 위치,
+        "photoDate" : 해당 게시글의 이미지 날짜,
+        "hashtags" : 해당 게시글에 등록된 해시태그 리스트
+    }
+    ```
+        
+  - ***404 NOT FOUND***
+        
+    ```jsonc
+    게시글을 찾을 수 없습니다.
+    ```
+- 게시글 좋아요
+    - **API** : `/api/likedpost/{post_id}/{user_id}`
+    - **Method : GET**    
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        해당 게시글을 좋아요 하였습니다. (좋아요 시)
+        좋아요를 취소하였습니다. (좋아요 취소 시)
+        ```
+        
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 가능한 기능입니다.
+        ```
+
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        게시글을 찾을 수 없습니다.
+        ```
+        
