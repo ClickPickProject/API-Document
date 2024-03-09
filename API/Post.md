@@ -8,10 +8,10 @@
     
     ```jsonc
     {
-    	"title" : 게시글의 제목(not null),
-    	"content" : 게시글의 내용(not null),
-    	"position" : 위치 정보(null일 경우 ""으로 전송),
-    	"hashtag" : 해시태그(null일 경우 ""으로 전송)(ex #data #sample),
+        "title" : 게시글의 제목(not null),
+        "content" : 게시글의 내용(not null),
+        "position" : 위치 정보(null일 경우 ""으로 전송),
+        "hashtag" : 해시태그(null일 경우 ""으로 전송)(ex #data #sample),
         "postCategory" : "자유", "여행지", "음식" 중 하나
     }
     ```
@@ -305,7 +305,7 @@
             },
             "numberOfElements": 현재 페이지에 포함된 게시글의 수,
             "empty": 현재 페이지의 결과가 비어 있는지 여부    
-        }
-            ```
+        }  
+        ```
 
 
