@@ -110,7 +110,8 @@
         "position" : 해당 게시글의 등록된 위치,
         "photoDate" : 해당 게시글의 이미지 날짜,
         "hashtags" : 해당 게시글에 등록된 해시태그 리스트,
-        "PostCategory" : 해당 게시글의 카테고리
+        "PostCategory" : 해당 게시글의 카테고리,
+        "CommentCount" : 댓글 수
     }
     ```
         
@@ -165,7 +166,8 @@
                     "viewCount": 조회수,
                     "likeCount": 좋아요 수,
                     "hashtags": "해시태그",
-                    "postCategory" : "자유", "여행지", "음식" 중 하나
+                    "postCategory" : "자유", "여행지", "음식" 중 하나,
+                    "CommentCount" : 댓글 수
                     
                 },
 
@@ -222,7 +224,8 @@
                     "viewCount": 조회수,
                     "likeCount": 좋아요 수,
                     "hashtags": "해시태그",
-                    "postCategory" : "자유", "여행지", "음식" 중 하나
+                    "postCategory" : "자유", "여행지", "음식" 중 하나,
+                    "CommentCount" : 댓글 수
                 },
 
                 ...,
@@ -274,7 +277,8 @@
                     "viewCount": 조회수,
                     "likeCount": 좋아요 수,
                     "hashtags": "해시태그",
-                    "postCategory" : "자유", "여행지", "음식" 중 하나
+                    "postCategory" : "자유", "여행지", "음식" 중 하나,
+                    "CommentCount" : 댓글 수
                 },
 
                 ...,
