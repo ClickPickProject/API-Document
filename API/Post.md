@@ -11,7 +11,7 @@
         "title" : 게시글의 제목(not null),
         "content" : 게시글의 내용(not null),
         "position" : 위치 정보(null일 경우 ""으로 전송),
-        "hashtag" : 해시태그(null일 경우 ""으로 전송)(ex #data #sample),
+        "hashtags" : [해시태그 배열] (null일 경우 []으로 빈 배열 전송)(ex ["#data" ,"#sample"]) or ([]),
         "postCategory" : "자유", "여행지", "음식" 중 하나
     }
     ```
@@ -68,7 +68,7 @@
         "title" : 수정하고자 하는 제목,
         "content" : 수정하고자 하는 내용,
         "position" : 위치 정보(null일 경우 ""으로 전송),
-        "hashtag" : 해시태그(null일 경우 ""으로 전송),
+        "hashtags" : [해시태그 배열] (null일 경우 []으로 빈 배열 전송)(ex ["#data" ,"#sample"]) or ([]),
         "postCategory" : "자유", "여행지", "음식" 중 하나
     }
     ```
@@ -109,7 +109,7 @@
         "viewCount" : 해당 게시글의 조회수,
         "position" : 해당 게시글의 등록된 위치,
         "photoDate" : 해당 게시글의 이미지 날짜,
-        "hashtags" : 해당 게시글에 등록된 해시태그 리스트,
+        "hashtags" : [해당 게시글에 등록된 해시태그 리스트],
         "PostCategory" : 해당 게시글의 카테고리,
         "CommentCount" : 댓글 수
     }
@@ -165,7 +165,7 @@
                     "createAt": 작성일자,
                     "viewCount": 조회수,
                     "likeCount": 좋아요 수,
-                    "hashtags": "해시태그",
+                    "hashtags": [해시태그 리스트],
                     "postCategory" : "자유", "여행지", "음식" 중 하나,
                     "CommentCount" : 댓글 수
                     
@@ -223,7 +223,7 @@
                     "createAt": 작성일자,
                     "viewCount": 조회수,
                     "likeCount": 좋아요 수,
-                    "hashtags": "해시태그",
+                    "hashtags": [해시태그 리스트],
                     "postCategory" : "자유", "여행지", "음식" 중 하나,
                     "CommentCount" : 댓글 수
                 },
@@ -276,7 +276,7 @@
                     "createAt": 작성일자,
                     "viewCount": 조회수,
                     "likeCount": 좋아요 수,
-                    "hashtags": "해시태그",
+                    "hashtags": [해시태그 리스트],
                     "postCategory" : "자유", "여행지", "음식" 중 하나,
                     "CommentCount" : 댓글 수
                 },
