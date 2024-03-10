@@ -101,6 +101,7 @@
           
     ```jsonc
     {
+        "postId" : 게시글 아이디,
         "nickname" : 게시글을 작성한 유저의 닉네임,
         "title" : 해당 게시글의 제목,
         "content" : 해당 게시글의 내용,
@@ -268,47 +269,24 @@
           
         ```jsonc
         {
-            "content": [
+            [
                 {
-                    "postId": 게시글 Id,
-                    "nickname": 작성한 유저 닉네임,
+                    "postId": 게시글 아이디,
+                    "nickname": 작성자 닉네임,
                     "title": 게시글 제목,
-                    "createAt": 작성일자,
+                    "createAt": 게시글 작성일자,
                     "viewCount": 조회수,
                     "likeCount": 좋아요 수,
                     "hashtags": [해시태그 리스트],
-                    "postCategory" : "자유", "여행지", "음식" 중 하나,
-                    "CommentCount" : 댓글 수
+                    "postCategory": 게시글 카테고리,
+                    "commentCount": 댓글수
                 },
-
-                ...,
-  
-            ],
-            "pageable": {
-                "pageNumber": 현재 페이지 ,
-                "pageSize": 한 페이지당 가능한 게시글 수,
-                "sort": {
-                    "empty": 정렬 정보가 비어있는지 여부,
-                    "sorted": 페이징 결과 정렬 여부,
-                    "unsorted": 페이징 결과 정렬 여부,
-                    },
-                "offset": 현재 펭지ㅣ의 게시글 시작 위치,
-                "paged": 페이징 여부,
-                "unpaged": 페이징 여부
+                {
                 },
-            "last": 현재 페이지가 마지막 페이지 인지,
-            "totalPages": 총 페이지의 개수,
-            "totalElements": 게시글 총 개수,
-            "first": 첫 게시글인지 여부,
-            "size": 페이지 당 표시 가능한 게시글 수,
-            "number": 현재 페이지 번호,
-            "sort": {
-                "empty": 정렬 정보가 비어 있는지 여부,
-                "sorted": 페이징 결과 정렬 여부,
-                "unsorted": 페이징 결과 정렬 여부
-            },
-            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
-            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+                {
+                }
+            
+            ]
         }  
         ```
 
