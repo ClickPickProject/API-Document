@@ -111,8 +111,17 @@
         "position" : 해당 게시글의 등록된 위치,
         "photoDate" : 해당 게시글의 이미지 날짜,
         "hashtags" : [해당 게시글에 등록된 해시태그 리스트],
-        "PostCategory" : 해당 게시글의 카테고리,
-        "CommentCount" : 댓글 수
+        "postCategory" : 해당 게시글의 카테고리,
+        "commentCount" : 댓글 수,
+        "comments" : [
+                        {
+                            "commentId" : 댓글 아이디 ,
+                            "nickname" : 댓글 작성자 닉네임 ,
+                            "content" : 댓글 내용 ,
+                            "createAt" : 댓글 작성일자,
+                            "likeCount" : 댓글 좋아요 수 
+                        }
+                        ]
     }
     ```
         
