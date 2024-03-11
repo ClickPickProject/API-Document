@@ -9,4 +9,4 @@
 
 ## [📑 Post API](https://github.com/ClickPickProject/API-Document/tree/main/API/Post.md)
 
-## [📄 Comment API](https://github.com/ClickPickProject/API-Document/tree/main/API/Comment.md)
+## [📄 Comment API](https://github.com/ClickPickProject/API-Document/tree/main/API/%08Comment.md)
