@@ -113,13 +113,15 @@
         "hashtags" : [해당 게시글에 등록된 해시태그 리스트],
         "postCategory" : 해당 게시글의 카테고리,
         "commentCount" : 댓글 수,
+        "likePostCount" : 게시글 좋아요 여부,
         "comments" : [
                         {
                             "commentId" : 댓글 아이디 ,
                             "nickname" : 댓글 작성자 닉네임 ,
                             "content" : 댓글 내용 ,
                             "createAt" : 댓글 작성일자,
-                            "likeCount" : 댓글 좋아요 수 
+                            "likeCount" : 댓글 좋아요 수,
+                            "likeCommentCheck" : 댓글 좋아요 여부 
                         }
                         ]
     }
