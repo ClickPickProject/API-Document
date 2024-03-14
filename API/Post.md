@@ -362,7 +362,7 @@
     - **Method : GET**
     - **Request**
        ```jsonc
-       http://~/api/post/list?page=0?title="title" ("" 제외하고 입력)
+       http://~/api/post/title?page=0?title="title" ("" 제외하고 입력)
        ```
     - **Response**
       
@@ -419,7 +419,7 @@
     - **Method : GET**
     - **Request**
        ```jsonc
-       http://~/api/post/list?page=0?content="content" ("" 제외하고 입력)
+       http://~/api/post/content?page=0?content="content" ("" 제외하고 입력)
        ```
     - **Response**
       
@@ -476,7 +476,7 @@
     - **Method : GET**
     - **Request**
        ```jsonc
-       http://~/api/post/list?page=0?hashtag="#hashtag" ("" 제외하고 입력, #은 %23으로 인코딩 해서 사용해야함)
+       http://~/api/post/hashtag?page=0?hashtag="#hashtag" ("" 제외하고 입력, #은 %23으로 인코딩 해서 사용해야함)
        ```
     - **Response**
       
@@ -533,7 +533,7 @@
     - **Method : GET**
     - **Request**
        ```jsonc
-       http://~/api/post/list?page=0?hashtag="category" ("" 제외하고 입력)
+       http://~/api/post/category?page=0?hashtag="category" ("" 제외하고 입력)
        ```
     - **Response**
       
