@@ -1,6 +1,6 @@
-## Post API List
+## Comment API List
 
-- 게시글 작성
+- 댓글 작성
     - **API** : `/api/member/comment`
     - **Method : POST**
     - **Body :  raw (json)**
@@ -21,16 +21,19 @@
         댓글이 등록되었습니다.
         ```
         
-        - ***404 CONFLICT***
+        - ***404 NOT_FOUND***
         
         ```jsonc
-        존재하지 않는 이메일(아이디) 입니다.
-        or
         존재하지 않는 게시글입니다.
+        ```
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 가능한 기능입니다.
         ```
 
 
-- 게시글 삭제
+- 댓글 삭제
     - **API** : `/api/member/comment/{comment_id}`
     - **Method : DELETE**
     - **Request**
@@ -52,7 +55,7 @@
         ```jsonc
         사용자가 삭제할 수 없는 게시글입니다.
         ```
-- 게시글 수정
+- 댓글 수정
     - **API** : `/api/member/comment/{comment_id}`
     - **Method : Post**
     - **Body :  raw (json)**
@@ -79,7 +82,7 @@
         사용자가 수정할 수 없는 게시글입니다.
         ```
         
-- 게시글 좋아요
+- 댓글 좋아요
     - **API** : `/api/member/likedcomment/{comment_id}`
     - **Method : GET**    
     - **Response**
@@ -101,4 +104,38 @@
         
         ```jsonc
         댓글을 찾을 수 없습니다.
+        ```
+- 대댓글 작성
+    - **API** : `/api/member/comment`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
+    ```jsonc
+    {
+        "parentcommentId" : 대댓글을 달고자 하는 댓글 id,
+        "postId" : 작성하고자 하는 댓글의 게시글 id,
+        "content" : 댓글 내용
+    }
+    ```
+    
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        댓글이 등록되었습니다.
+        ```
+        
+        - ***404 404 NOT_FOUND***
+        
+        ```jsonc
+        존재하지 않는 게시글입니다.
+        or
+        상위 댓글을 찾을 수 없습니다.
+        ```
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 가능한 기능입니다.
         ```
