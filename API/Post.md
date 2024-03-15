@@ -121,7 +121,15 @@
                             "content" : 댓글 내용 ,
                             "createAt" : 댓글 작성일자,
                             "likeCount" : 댓글 좋아요 수,
-                            "likeCommentCheck" : 댓글 좋아요 여부 
+                            "likeCommentCheck" : 댓글 좋아요 여부
+                            "recommentList" : [ 
+                                                "commentId" : 대댓글 아이디,
+                                                "nickname" : 대댓글 작성자 닉네임,
+                                                "content" : 대댓글 내용,
+                                                "createAt" : 작성 날자,
+                                                "likeCount" : 대댓글 좋아요 수,
+                                                "likeCommentCheck" : 대댓글 좋아요 여부
+                                                ]
                         }
                         ]
     }
