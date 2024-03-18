@@ -157,6 +157,7 @@
         ```jsonc
         존재하지 않는 전화번호 및 이름입니다.
         ```
+        
 - 비밀번호 찾기
     - **API** : `/api/login/password`
     - **Method : POST**
@@ -184,6 +185,7 @@
         ```jsonc
         존재하지 않는 이메일(아이디) 입니다.
         ```
+        
 - 인증코드 확인
     - **API** : `/api/login/id`
     - **Method : POST**
@@ -210,6 +212,7 @@
         ```jsonc
         인증번호가 일치하지 않습니다.
         ```
+        
 - 비밀번호 변경
     - **API** : `/api/login/id`
     - **Method : POST**
@@ -241,3 +244,87 @@
         ```jsonc
         기존 비밀번호와 동일합니다.
         ```
+        
+  - 유저정보 확인
+    - **API** : `/api/member/userinfo`
+    - **Method : GET**
+
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+            {
+                "id" : 유저 아이디,
+                "name" : 유저 이름,
+                "nickname" : 유저 닉네임,
+                "phone" :  유저 전화번호,
+                "createAt" : 유저 가입일
+            }
+        ```
+        
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 사용 가능한 기능입니다.
+        ```
+  - 닉네임 변경
+    - **API** : `/api/member/new-nickname/{nickname}`
+    - **Method : GET**
+
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        닉네임이 변경되었습니다.
+        ```
+        
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 사용 가능한 기능입니다.
+        ```
+        - ***409 CONFLICT***
+        
+        ```jsonc
+        존재하는 닉네임입니다.
+        ```
+        
+  - 전화번호 변경
+    - **API** : `/api/member/new-phone-number/{phone-number}`
+    - **Method : GET**
+
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        전화번호가 변경되었습니다.
+        ```
+        
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 사용 가능한 기능입니다.
+        ```
+        - ***409 CONFLICT***
+        
+        ```jsonc
+        존재하는 전화번호입니다.
+        ```
+        
+  - 회원 탈퇴
+    - **API** : `/api/member
+    - **Method : DELETE**
+
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        회원탈퇴가 완료되었습니다.
+        ```
+        
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 사용 가능한 기능입니다.
+        ```
+
