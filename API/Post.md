@@ -121,7 +121,8 @@
                             "content" : 댓글 내용 ,
                             "createAt" : 댓글 작성일자,
                             "likeCount" : 댓글 좋아요 수,
-                            "likeCommentCheck" : 댓글 좋아요 여부
+                            "likeCommentCheck" : 댓글 좋아요 여부,
+                            "commentStatus" : 삭제 되었으며 "DELETE", 아니라면 "LIVE",
                             "recommentList" : [ 
                                                 "commentId" : 대댓글 아이디,
                                                 "nickname" : 대댓글 작성자 닉네임,
