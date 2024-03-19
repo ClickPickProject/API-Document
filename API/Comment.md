@@ -21,7 +21,7 @@
         댓글이 등록되었습니다.
         ```
         
-        - ***404 NOT_FOUND***
+        - ***404 NOT_FOUND***
         
         ```jsonc
         존재하지 않는 게시글입니다.
@@ -138,4 +138,42 @@
         
         ```jsonc
         회원만 가능한 기능입니다.
+        ```
+        
+- 댓글 신고
+    - **API** : `/api/member/report/comment`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
+    ```jsonc
+    {
+        "reportedUserNickname" : 신고하고자 하는 댓글 작성자 닉네임,
+        "commentId" : 신고하고자 하는 댓글 아이디,
+        "reason" : 신고 이유
+    }
+    ```
+    
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        신고를 완료하였습니다..
+        ```
+        
+        - ***404 NOT_FOUND***
+        
+        ```jsonc
+        댓글과 작성자가 올바르지 않습니다.
+        ```
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 가능한 기능입니다.
+        ```
+        - ***409 CONFLICT***
+          
+        ```jsonc
+        이미 처리된 신고입니다.
         ```
