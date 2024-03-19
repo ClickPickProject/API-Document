@@ -42,7 +42,6 @@
 - 공지사항 삭제
     - **API** : `/api/admin/notice`
     - **Method : POST**
-    - **Body :  raw (json)**
     - **Request**
     
     ```jsonc
