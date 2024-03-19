@@ -39,7 +39,7 @@
     - **Request**
     
     ```jsonc
-      comment_id : 삭제하고자 하는 게시글 아이디
+      comment_id : 삭제하고자 하는 댓글 아이디
     ```
     
     - **Response**
@@ -106,7 +106,7 @@
         댓글을 찾을 수 없습니다.
         ```
 - 대댓글 작성
-    - **API** : `/api/member/comment`
+    - **API** : `/api/member/recomment`
     - **Method : POST**
     - **Body :  raw (json)**
     - **Request**
