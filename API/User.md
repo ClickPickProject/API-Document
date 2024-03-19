@@ -267,6 +267,7 @@
         ```jsonc
         회원만 사용 가능한 기능입니다.
         ```
+        
   - 닉네임 변경
     - **API** : `/api/member/new-nickname/{nickname}`
     - **Method : GET**
@@ -326,5 +327,233 @@
         
         ```jsonc
         회원만 사용 가능한 기능입니다.
+        ```
+        
+- 자신이 작성한 게시글 리스트 조회
+    - **API** : `/api/member/post/list`
+    - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/member/post/list?page=1
+       ```
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "content": [
+                {
+                    "postId": 게시글 Id,
+                    "nickname": 작성한 유저 닉네임,
+                    "title": 게시글 제목,
+                    "createAt": 작성일자,
+                    "viewCount": 조회수,
+                    "likeCount": 좋아요 수,
+                    "hashtags": [해시태그 리스트],
+                    "postCategory" : "자유", "여행지", "음식" 중 하나,
+                    "CommentCount" : 댓글 수
+                },
+
+                ...,
+  
+            ],
+            "pageable": {
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
+                "sort": {
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 펭지ㅣ의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
+                },
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
+            "sort": {
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
+            },
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+        }
+        ```
+
+- 자신이 작성한 댓글의 게시글 리스트 조회
+    - **API** : `/api/member/comment/list`
+    - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/member/comment/list?page=1
+       ```
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "content": [
+                {
+                    "postId": 게시글 Id,
+                    "nickname": 작성한 유저 닉네임,
+                    "title": 게시글 제목,
+                    "createAt": 작성일자,
+                    "viewCount": 조회수,
+                    "likeCount": 좋아요 수,
+                    "hashtags": [해시태그 리스트],
+                    "postCategory" : "자유", "여행지", "음식" 중 하나,
+                    "CommentCount" : 댓글 수
+                },
+
+                ...,
+  
+            ],
+            "pageable": {
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
+                "sort": {
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 펭지ㅣ의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
+                },
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
+            "sort": {
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
+            },
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+        }
+        ```
+
+- 좋아요 한 게시글 리스트 조회
+    - **API** : `/api/member/liked/post/list`
+    - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/member/liked/post/list?page=1
+       ```
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "content": [
+                {
+                    "postId": 게시글 Id,
+                    "nickname": 작성한 유저 닉네임,
+                    "title": 게시글 제목,
+                    "createAt": 작성일자,
+                    "viewCount": 조회수,
+                    "likeCount": 좋아요 수,
+                    "hashtags": [해시태그 리스트],
+                    "postCategory" : "자유", "여행지", "음식" 중 하나,
+                    "CommentCount" : 댓글 수
+                },
+
+                ...,
+  
+            ],
+            "pageable": {
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
+                "sort": {
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 펭지ㅣ의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
+                },
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
+            "sort": {
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
+            },
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+        }
+        ```
+
+- 좋아요한 댓글의 게시글 리스트 조회
+    - **API** : `/api/member/liked/comment/list`
+    - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/member/liked/comment/list?page=1
+       ```
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "content": [
+                {
+                    "postId": 게시글 Id,
+                    "nickname": 작성한 유저 닉네임,
+                    "title": 게시글 제목,
+                    "createAt": 작성일자,
+                    "viewCount": 조회수,
+                    "likeCount": 좋아요 수,
+                    "hashtags": [해시태그 리스트],
+                    "postCategory" : "자유", "여행지", "음식" 중 하나,
+                    "CommentCount" : 댓글 수
+                },
+
+                ...,
+  
+            ],
+            "pageable": {
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
+                "sort": {
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 펭지ㅣ의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
+                },
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
+            "sort": {
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
+            },
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+        }
         ```
 
