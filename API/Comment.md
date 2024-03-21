@@ -113,7 +113,7 @@
     
     ```jsonc
     {
-        "parentcommentId" : 대댓글을 달고자 하는 댓글 id,
+        "parentCommentId" : 대댓글을 달고자 하는 댓글 id,
         "postId" : 작성하고자 하는 댓글의 게시글 id,
         "content" : 댓글 내용
     }
