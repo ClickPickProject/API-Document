@@ -560,3 +560,56 @@
         }
         ```
 
+- 프로필 사진 추가/변경
+    - **API** : `/api/member/profileimage`
+    - **Method : POST**
+    - **Body :  form-data**
+    - **Request**
+    
+    ```jsonc
+    	image : "이미지 파일 ex)jpg,png ..."
+    ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        프로필사진을 등록하였습니다.
+        or
+        프로필사진이 변경되었습니다.
+        ```
+        
+        - ***409 CONFLICT***
+        
+        ```jsonc
+        이미지만 업로드 가능합니다.
+        ```
+
+- 프로필 사진 삭제
+    - **API** : `/api/member/profileimage`
+    - **Method : DELETE**
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        프로필사진이 삭제되었습니다.
+        ```
+        
+        - ***409 NOT FOUND***
+        
+        ```jsonc
+        프로필 사진이 등록되어 있지 않습니다.
+        ```
+
+- 프로필 사진 삭제 (임시)
+    - **API** : `/api/member/profileimage`
+    - **Method : GET**
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        프로필 사진 url 반환 (없으면 디폴트 사진)
+        ```
+        
