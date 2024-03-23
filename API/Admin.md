@@ -106,7 +106,7 @@
 
         
 - 게시물로 신고된 유저 정지 시키기
-    - **API** : `/api/admin/manager/ban`
+    - **API** : `/api/admin/manager/postban`
     - **Method : POST**
     - **Request**
     
