@@ -561,7 +561,7 @@
         ```
 
 - 프로필 사진 추가/변경
-    - **API** : `/api/member/profileimage`
+    - **API** : `/api/member/profile/image`
     - **Method : POST**
     - **Body :  form-data**
     - **Request**
@@ -586,7 +586,7 @@
         ```
 
 - 프로필 사진 삭제
-    - **API** : `/api/member/profileimage`
+    - **API** : `/api/member/profile/image`
     - **Method : DELETE**
     
     - **Response**
@@ -603,7 +603,7 @@
         ```
 
 - 프로필 사진 조회 (임시)
-    - **API** : `/api/member/profileimage`
+    - **API** : `/api/member/profile/image`
     - **Method : GET**
     
     - **Response**
