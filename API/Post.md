@@ -573,3 +573,62 @@
         ```jsonc
         이미 처리된 신고입니다.
         ```
+
+- 게시글 사진 추가 / 조회
+    - **API** : `/api/member/post/image`
+    - **Method : POST**
+    - **Body :  form-data**
+    - **Request**
+    
+    ```jsonc
+        postId : 사진을 추가할 게시글 id,
+    	image : "이미지 파일 ex)jpg,png ..."
+    ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+            {
+                url : "업로드한 사진 url"
+            }
+        ```
+        
+        - ***409 CONFLICT***
+        
+        ```jsonc
+        이미지만 업로드 가능합니다.
+        ```
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        게시글이 존재하지 않습니다.
+        ```
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 사용 가능한 기능입니다.
+        ```
+
+- 프로필 사진 삭제
+    - **API** : `/api/member/post/image/{post_id}/{image_name}`
+    - **Method : DELETE**
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        해당 이미지가 삭제되었습니다.
+        ```
+        
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        사진이 존재하지 않습니다.
+        ```
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        회원만 사용 가능한 기능입니다.
+        ```
+
