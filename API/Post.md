@@ -590,7 +590,6 @@
     - **Request**
     
     ```jsonc
-        postId : 사진을 추가할 게시글 id,
     	image : "이미지 파일 ex)jpg,png ..."
     ```
     
@@ -610,11 +609,6 @@
         ```jsonc
         이미지만 업로드 가능합니다.
         ```
-        - ***404 NOT FOUND***
-        
-        ```jsonc
-        게시글이 존재하지 않습니다.
-        ```
         - ***403 FORBIDDEN***
         
         ```jsonc
@@ -622,7 +616,7 @@
         ```
 
 - 게시글 사진 삭제
-    - **API** : `/api/member/post/image/{post_id}/{image_name}`
+    - **API** : `/api/member/post/image/{image_name}`
     - **Method : DELETE**
     
     - **Response**
@@ -631,7 +625,6 @@
         ```jsonc
         해당 이미지가 삭제되었습니다.
         ```
-        
         - ***404 NOT FOUND***
         
         ```jsonc
