@@ -599,7 +599,9 @@
         
         ```jsonc
             {
-                url : "업로드한 사진 url"
+                url : "업로드한 사진 url",
+                capacity : 파일 용량
+                
             }
         ```
         
@@ -619,7 +621,7 @@
         회원만 사용 가능한 기능입니다.
         ```
 
-- 프로필 사진 삭제
+- 게시글 사진 삭제
     - **API** : `/api/member/post/image/{post_id}/{image_name}`
     - **Method : DELETE**
     
