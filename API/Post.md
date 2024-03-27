@@ -13,7 +13,7 @@
         "position" : 위치 정보(null일 경우 ""으로 전송),
         "hashtags" : [해시태그 배열] (null일 경우 []으로 빈 배열 전송)(ex ["#data" ,"#sample"]) or ([]),
         "postCategory" : "자유", "여행지", "음식" 중 하나
-        "imageNaems" : [해당 게시글의 사진 이름 리스트] (게시글 사진 추가 시 반환되는 url에서 images 뒤의 파일명(확장자 포함))  
+        "imageNames" : [해당 게시글의 사진 이름 리스트] (게시글 사진 추가 시 반환되는 url에서 images 뒤의 파일명(확장자 포함))  
     }
     ```
     
