@@ -12,7 +12,8 @@
         "content" : 게시글의 내용(not null),
         "position" : 위치 정보(null일 경우 ""으로 전송),
         "hashtags" : [해시태그 배열] (null일 경우 []으로 빈 배열 전송)(ex ["#data" ,"#sample"]) or ([]),
-        "postCategory" : "자유", "여행지", "음식" 중 하나
+        "postCategory" : "자유", "여행지", "음식" 중 하나,
+        "thumbnailImage" : 해당 게시글의 썸네일 이미지 이름,
         "imageNames" : [해당 게시글의 사진 이름 리스트] (게시글 사진 추가 시 반환되는 url에서 images 뒤의 파일명(확장자 포함))  
     }
     ```
@@ -70,7 +71,8 @@
         "content" : 수정하고자 하는 내용,
         "position" : 위치 정보(null일 경우 ""으로 전송),
         "hashtags" : [해시태그 배열] (null일 경우 []으로 빈 배열 전송)(ex ["#data" ,"#sample"]) or ([]),
-        "postCategory" : "자유", "여행지", "음식" 중 하나
+        "postCategory" : "자유", "여행지", "음식" 중 하나,
+        "thumbnailImage" : 해당 게시글의 썸네일 이미지 이름,
         "updateImageNames" : [변경된 해당 게시글의 사진 이름 리스트] (게시글 사진 추가 시 반환되는 url에서 images 뒤의 파일명(확장자 포함))  
     }
     ```
@@ -250,7 +252,8 @@
                     "hashtags": [해시태그 리스트],
                     "postCategory": 게시글 카테고리,
                     "commentCount": 댓글수,
-                    "profileUrl": 프로필 url
+                    "profileUrl": 프로필 url,
+                    "thumbnail" : 해당 게시글 썸네이리 이미지 url
                 },
                 {
                 },
