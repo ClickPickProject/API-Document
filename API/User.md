@@ -603,7 +603,7 @@
         ```
 
 - 프로필 사진 조회
-    - **API** : `/api/member/image`
+    - **API** : `/api/profile/image`
     - **Method : GET**
     
     - **Response**
