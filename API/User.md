@@ -602,8 +602,8 @@
         프로필 사진이 등록되어 있지 않습니다.
         ```
 
-- 프로필 사진 조회 (임시)
-    - **API** : `/api/member/profile/image`
+- 프로필 사진 조회
+    - **API** : `/api/member/image`
     - **Method : GET**
     
     - **Response**
@@ -611,7 +611,8 @@
         
         ```jsonc
         {
-            url : 이미지 url
+            url : 이미지 url,
+            capacity : 이미지 용량
         }
         ```
         
