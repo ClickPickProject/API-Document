@@ -1,7 +1,7 @@
 ## Map API List
 
 - 지도 범위 게시글 조회
-    - **API** : `/api/map/maker`
+    - **API** : `/api/map/marker`
     - **Method : POST**
     - **Body :  raw (json)**
     - **Request**
