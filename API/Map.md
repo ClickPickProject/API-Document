@@ -23,7 +23,8 @@
           {
             "postId" : 해당 게시글 id,
             "xposition": 게시글의 x좌표,
-            "yposition": 게시글의 y좌표
+            "yposition": 게시글의 y좌표,
+            "position" : 게시글 주소
           },
           {
             ...        
