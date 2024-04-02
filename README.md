@@ -11,4 +11,4 @@
 
 ## [📄 Comment API](https://github.com/ClickPickProject/API-Document/tree/main/API/%08Comment.md)
 
-## [🗺️ Comment API](https://github.com/ClickPickProject/API-Document/tree/main/API/Map.md)
+## [🗺️ Map API](https://github.com/ClickPickProject/API-Document/tree/main/API/Map.md)
