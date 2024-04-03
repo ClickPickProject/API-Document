@@ -86,3 +86,25 @@
         }
         ```
         
+- 장소 즐겨찾기
+    - **API** : `/api/member/map/bookmark`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
+    ```jsonc
+    {
+        "xposition" : 즐겨찾기 할 장소의 x좌표(소수점),
+        "yposition" : 즐겨찾기 할 장소의 y좌표(소수점),
+        "status" : 즐겨찾기 상태 (좋아요 : LIKE,  갈 곳 : WISH, 간 곳 : VISITED) ex) "status" : "LIKE"
+    }
+    ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        즐겨찾기에 등록하였습니다.
+        or
+        즐겨찾기에서 삭제하였습니다. (재요청)
+        ```
