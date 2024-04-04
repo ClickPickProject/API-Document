@@ -102,9 +102,35 @@
     
     - **Response**
         - ***200 OK***
+
+- 즐겨찾기 리스트 조회
+    - **API** : `/api/member/map/bookmark/list`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
+    ```jsonc
+    {
+        "south" : getbounds로 얻은 지도 범위 남쪽 좌표 (소수점),
+        "west" : getbounds로 얻은 지도 범위 서쪽 좌표 (소수점),
+        "north" : getbounds로 얻은 지도 범위 북쪽 좌표 (소수점),
+        "east" : getbounds로 얻은 지도 범위 동쪽 좌표 (소수점)
+    }
+    ```
+    
+    - **Response**
+        - ***200 OK***
         
         ```jsonc
-        즐겨찾기에 등록하였습니다.
-        or
-        즐겨찾기에서 삭제하였습니다. (재요청)
+        [
+          {
+            "status" : 즐겨찾기 종류 (좋아요 -> LIKE, 갈 곳 -> WISH, 간 곳 -> VISITED),
+            "xposition" : 해당 장소 x좌표,
+            "yposition" : 해당 장소 y좌표
+          },
+          {
+            ...        
+          }
+        ]
         ```
+        
