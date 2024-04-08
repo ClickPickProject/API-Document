@@ -111,7 +111,7 @@
         ```jsonc
         삭제할 수 없는 답변입니다.
         ```
-- 질문 수정
+- 답변 수정
     - **API** : `/api/admin/answer/{answer_id}`
     - **Method : Post**
     - **Body :  raw (json)**
@@ -137,6 +137,42 @@
         ```jsonc
         사용자가 수정할 수 없는 답변입니다.
         ```
-
+- 질문 상세 조회
+    - **API** : `/api/question/{question_id}`
+    - **Method : GET**
+    - **Body :  raw (json)**
+    - **Request**
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "questionId" : 질문 아이디,
+            "userId" : 작성자 아이디,
+            "nickname" : 작성자 닉네임,
+            "title" : 질문 제목,
+            "content" : 질문 내용,
+            "status" : 질문 상태 표시(COMPLETE, AWAITING),
+            "date" : 질문 작성 날짜,
+            "answer" : [ (답변 없으면 빈리스트 반환 [])
+                "answerId" : 답변 아이디,
+                "questionId" : 답변이 달린 질문 아이디,
+                "adminId" : 답변 작성 관리자 아이디,
+                "nickname" : ADMIN(고정),
+                "title" : 답변 제목,
+                "content" : 답변 내용,
+                "date" : 답변 날짜
+            ]
+        
+        }
+        
+        ```
+        
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        존재하지 않는 질문입니다.
+        ```
         
 
