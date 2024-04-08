@@ -174,5 +174,175 @@
         ```jsonc
         존재하지 않는 질문입니다.
         ```
-        
 
+- 질문 리스트 조회
+    - **API** : `/api/question/list`
+    - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/question/list?page=1 (0번일 경우 page=0 생략가능)
+       ```
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "content": [
+                {
+                    "questionId" : 질문 Id,
+                    "userId" : 작성한 유저 아이디,
+                    "nickname" : 작성한 유저 닉네임,
+                    "title" : 질문 제목,
+                    "createAt" : 잘성 날짜,
+                    "status" :  질문 상태 표시(COMPLETE, AWAITING)
+                    
+                },
+
+                ...,
+  
+            ],
+            "pageable": {
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
+                "sort": {
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 페이지의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
+                },
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
+            "sort": {
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
+            },
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+        }
+        ```
+        
+- 작성한 질문 리스트 조회
+    - **API** : `/api/member/question/list`
+    - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/member/question/list?page=1 (0번일 경우 page=0 생략가능)
+       ```
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "content": [
+                {
+                    "questionId" : 질문 Id,
+                    "userId" : 작성한 유저 아이디,
+                    "nickname" : 작성한 유저 닉네임,
+                    "title" : 질문 제목,
+                    "createAt" : 잘성 날짜,
+                    "status" :  질문 상태 표시(COMPLETE, AWAITING)
+                    
+                },
+
+                ...,
+  
+            ],
+            "pageable": {
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
+                "sort": {
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 페이지의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
+                },
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
+            "sort": {
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
+            },
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+        }
+        ```
+                
+- 상태별 질문 리스트 조회
+    - **API** : `/api/question/list/{status}`
+    - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/question/list/AWAITING?page=1 (0번일 경우 page=0 생략가능)
+       or
+       http://~/api/question/list/COMPLETE?page=1 (0번일 경우 page=0 생략가능)
+       ```
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "content": [
+                {
+                    "questionId" : 질문 Id,
+                    "userId" : 작성한 유저 아이디,
+                    "nickname" : 작성한 유저 닉네임,
+                    "title" : 질문 제목,
+                    "createAt" : 잘성 날짜,
+                    "status" :  질문 상태 표시(COMPLETE, AWAITING)
+                    
+                },
+
+                ...,
+  
+            ],
+            "pageable": {
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
+                "sort": {
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 페이지의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
+                },
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
+            "sort": {
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
+            },
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+        }
+        ```
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        잘못된 요청입니다.
+        ```
