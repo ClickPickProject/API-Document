@@ -155,6 +155,7 @@
             "content" : 질문 내용,
             "status" : 질문 상태 표시(COMPLETE, AWAITING),
             "date" : 질문 작성 날짜,
+            "profileUrl" : 프로필 url
             "answer" : [ (답변 없으면 빈리스트 반환 [])
                 "answerId" : 답변 아이디,
                 "questionId" : 답변이 달린 질문 아이디,
@@ -162,7 +163,8 @@
                 "nickname" : ADMIN(고정),
                 "title" : 답변 제목,
                 "content" : 답변 내용,
-                "date" : 답변 날짜
+                "date" : 답변 날짜,
+                "profileUrl" : 프로필 url
             ]
         
         }
@@ -195,8 +197,8 @@
                     "nickname" : 작성한 유저 닉네임,
                     "title" : 질문 제목,
                     "createAt" : 잘성 날짜,
-                    "status" :  질문 상태 표시(COMPLETE, AWAITING)
-                    
+                    "status" :  질문 상태 표시(COMPLETE, AWAITING),
+                    "profileUrl" : 프로필 url    
                 },
 
                 ...,
@@ -250,7 +252,8 @@
                     "nickname" : 작성한 유저 닉네임,
                     "title" : 질문 제목,
                     "createAt" : 잘성 날짜,
-                    "status" :  질문 상태 표시(COMPLETE, AWAITING)
+                    "status" :  질문 상태 표시(COMPLETE, AWAITING),
+                    "profileUrl" : 프로필 url
                     
                 },
 
@@ -307,7 +310,8 @@
                     "nickname" : 작성한 유저 닉네임,
                     "title" : 질문 제목,
                     "createAt" : 잘성 날짜,
-                    "status" :  질문 상태 표시(COMPLETE, AWAITING)
+                    "status" :  질문 상태 표시(COMPLETE, AWAITING),
+                    "profileUrl" : 프로필 url
                     
                 },
 
