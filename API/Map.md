@@ -103,7 +103,7 @@
     - **Response**
         - ***200 OK***
 
-- 즐겨찾기 리스트 조회
+- 즐겨찾기 리스트 조회 (지도 범위)
     - **API** : `/api/member/map/bookmark/list`
     - **Method : POST**
     - **Body :  raw (json)**
@@ -118,6 +118,26 @@
     }
     ```
     
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        [
+          {
+            "status" : 즐겨찾기 종류 (좋아요 -> LIKE, 갈 곳 -> WISH, 간 곳 -> VISITED),
+            "xposition" : 해당 장소 x좌표,
+            "yposition" : 해당 장소 y좌표
+          },
+          {
+            ...        
+          }
+        ]
+        ```
+
+- 즐겨찾기 리스트 조회 (전체)
+    - **API** : `/api/member/map/bookmark/list`
+    - **Method : GET**
+    - **Body :  raw (json)**
     - **Response**
         - ***200 OK***
         
