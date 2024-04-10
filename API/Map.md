@@ -137,7 +137,6 @@
 - 즐겨찾기 리스트 조회 (전체)
     - **API** : `/api/member/map/bookmark/list`
     - **Method : GET**
-    - **Body :  raw (json)**
     - **Response**
         - ***200 OK***
         
