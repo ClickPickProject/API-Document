@@ -179,6 +179,12 @@
         존재하지 않는 질문입니다.
         ```
 
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        비공개된 질문입니다..
+        ```
+
 - 질문 리스트 조회
     - **API** : `/api/question/list`
     - **Method : GET**
