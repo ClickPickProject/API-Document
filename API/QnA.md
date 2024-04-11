@@ -8,6 +8,7 @@
     {
         "title" : 질문의 제목(not null),
         "content" : 질문의 내용(not null),
+        "lock" : 공개 여부 (공개 시 "UNLOCK", 비공개시 "LOCKED),(not null)
     }
     ```
     
@@ -51,6 +52,7 @@
     {
         "title" : 수정하고자 하는 제목,
         "content" : 수정하고자 하는 내용,
+        "lock" : 공개 여부 (공개 시 "UNLOCK", 비공개시 "LOCKED),(not null)
     }
     ```
     
