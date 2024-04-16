@@ -139,6 +139,36 @@
         ```jsonc
         사용자가 수정할 수 없는 답변입니다.
         ```
+        
+- 추가 질문/답변 작성
+    - **API** : `/api/member/{question_id}/{answer_id}/reanswer`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
+    ```jsonc
+    {
+        "title" : 답변의 제목(not null),
+        "content" : 답변의 내용(not null),
+    }
+    ```
+    
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        추가 질문을 작성하였습니다. (질문 작성자)
+        or
+        추가 답변을 작성하였습니다. (어드민)
+        ```
+        
+        - ***403 FORBIDDEN***
+        
+        ```jsonc
+        본인이 작성한 질문이 아닙니다.
+        ```
+        
 - 질문 상세 조회
     - **API** : `/api/question/{question_id}`
     - **Method : GET**
