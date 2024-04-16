@@ -96,7 +96,11 @@
     {
         "xposition" : 즐겨찾기 할 장소의 x좌표(소수점),
         "yposition" : 즐겨찾기 할 장소의 y좌표(소수점),
-        "status" : 즐겨찾기 상태 (좋아요 : LIKE,  갈 곳 : WISH, 간 곳 : VISITED) ex) "status" : "LIKE"
+        "status" : 즐겨찾기 상태 (좋아요 : LIKE,  갈 곳 : WISH, 간 곳 : VISITED) ex) "status" : "LIKE",
+        "name" : 장소 이름 (not null),
+        "address" : 장소 주소 (not null),
+        "category" : 장소 범주,
+        "homepage" : 홈페이지 주소
     }
     ```
     
@@ -126,7 +130,11 @@
           {
             "status" : 즐겨찾기 종류 (좋아요 -> LIKE, 갈 곳 -> WISH, 간 곳 -> VISITED),
             "xposition" : 해당 장소 x좌표,
-            "yposition" : 해당 장소 y좌표
+            "yposition" : 해당 장소 y좌표,
+            "name" : 장소 이름 (not null),
+            "address" : 장소 주소 (not null),
+            "category" : 장소 범주,
+            "homepage" : 홈페이지 주소
           },
           {
             ...        
@@ -145,7 +153,11 @@
           {
             "status" : 즐겨찾기 종류 (좋아요 -> LIKE, 갈 곳 -> WISH, 간 곳 -> VISITED),
             "xposition" : 해당 장소 x좌표,
-            "yposition" : 해당 장소 y좌표
+            "yposition" : 해당 장소 y좌표,
+            "name" : 장소 이름 (not null),
+            "address" : 장소 주소 (not null),
+            "category" : 장소 범주,
+            "homepage" : 홈페이지 주소
           },
           {
             ...        
