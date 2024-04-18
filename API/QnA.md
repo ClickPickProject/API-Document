@@ -97,7 +97,7 @@
         질문이 존재하지 않습니다.
         ```
 
-- 답변 삭제
+- 답변 및 추가 질문/답변 삭제
     - **API** : `/api/admin/answer/{answer_id}`
     - **Method : DELETE**
     - **Response**
@@ -113,7 +113,7 @@
         ```jsonc
         삭제할 수 없는 답변입니다.
         ```
-- 답변 수정
+- 답변 및 추가 질문/답변 수정
     - **API** : `/api/admin/answer/{answer_id}`
     - **Method : Post**
     - **Body :  raw (json)**
