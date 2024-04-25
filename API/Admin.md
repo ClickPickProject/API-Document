@@ -42,52 +42,57 @@
         공지사항 삭제가 완료되었습니다. 
         ```
 - 유저 리스트
-    - **API** : `/api/admin/manager/userlist`
+    - **API** : `/api/admin/userlist`
     - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/admin/userlist?page=0?status="normal" or "ban" ("" 제외하고 입력, 소문자)
+       ```
     - **Response**
         - ***200 OK***
         
+                - ***200 OK***
+          
         ```jsonc
         {
-            "content": [  //유저 리스트
+            "content": [
                 {
-                    "id": "tm4839@naver.com",
-                    "name": "태민",
-                    "nickname": "태민",
-                    "phone": "01012345678"
+                    "id" : 유저의 id,
+                    "nickname" : 유저의 닉네임,
+                    "name" : 유저의 이름,
+                    "phone" : 유저의 전화번호,
+                    "createAt" : 유저의 가입일,
+                    "userStatus" : 유저의 상태
                 },
-                {
-                    "id": "ban@naver.com",
-                    "name": "ban",
-                    "nickname": "ban",
-                    "phone": "01012345679"
-                }
+
+                ...,
+  
             ],
             "pageable": {
-                "pageNumber": 0,
-                "pageSize": 10,
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
                 "sort": {
-                    "empty": false,
-                    "unsorted": false,
-                    "sorted": true
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 페이지의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
                 },
-                "offset": 0,
-                "paged": true,
-                "unpaged": false
-            },
-            "last": true,
-            "totalElements": 2,
-            "totalPages": 1,
-            "first": true,
-            "size": 10,
-            "number": 0,
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
             "sort": {
-                "empty": false,
-                "unsorted": false,
-                "sorted": true
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
             },
-            "numberOfElements": 2,
-            "empty": false
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
         }
         ```
 
@@ -113,47 +118,51 @@
         ```
 
 - 정지된 유저 리스트
-    - **API** : `/api/admin/manager/banuserlist`
+    - **API** : `/api/admin/banuserlist`
     - **Method : GET**
     - **Response**
-        - ***200 OK***
-        
+               - ***200 OK***
+          
         ```jsonc
         {
             "content": [
                 {
-                    "id": "ban@naver.com",  //정지된 유저 정보
-                    "password": null,
-                    "name": "ban",
-                    "nickname": "ban",
-                    "phone": "01012345679"
-                }
+                    "id" : 정지된 유저 id,
+                    "nickname" : 정지된 유저 닉네임,
+                    "name" : 정지된 유저 이름,
+                    "phone" : 정지된 유저 전화번호,
+                    "startDate" : 정지 시작일,
+                    "endDate" : 정지 종료일 
+                },
+
+                ...,
+  
             ],
             "pageable": {
-                "pageNumber": 0,    //현재 페이지
-                "pageSize": 10,     //한 페이지당 가능한 게시글 수
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
                 "sort": {
-                    "empty": false,    //정렬 정보가 비어있는지 여부
-                    "unsorted": false, //페이징 결과 정렬 여부
-                    "sorted": true     //페이징 결과 정렬 여부
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 페이지의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
                 },
-                "offset": 0,           //현재 페이지의 게시글 시작 위치
-                "paged": true,         //페이징 여부
-                "unpaged": false       //페이징 여부
-            },
-            "last": true,              //현재 페이지가 마지막 페이지 인지
-            "totalElements": 1,        //총 페이지의 개수
-            "totalPages": 1,           //게시글 총 개수
-            "first": true,             //첫 게시글인지 여부
-            "size": 10,                //페이지 당 표시 가능한 게시글 수
-            "number": 0,               //현재 페이지 번호
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
             "sort": {
-                "empty": false,        //정렬 정보가 비어 있는지 여부
-                "unsorted": false,     //페이징 결과 정렬 여부
-                "sorted": true         //페이징 결과 정렬 여부
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
             },
-            "numberOfElements": 1,     //현재 페이지에 포함된 게시글의 수
-            "empty": false             //현재 페이지의 결과가 비어 있는지 여부
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
         }
         ```
         
