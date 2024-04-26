@@ -218,7 +218,7 @@
         }
         ```
 
-    - 공지사항 상세 조회
+- 공지사항 상세 조회
     - **API** : `/api/notice/{notice_id}`
     - **Method : GET**    
     - **Response**
@@ -241,7 +241,7 @@
     게시글을 찾을 수 없습니다.
     ```
 
-    - 신고된 게시글 처리
+- 신고된 게시글 처리
     - **API** : `/api/admin/postban`
     - **Method : POST**
     - **Body :  raw (json)**
