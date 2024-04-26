@@ -270,3 +270,112 @@
         ```jsonc
         사용자를 찾을 수 없습니다.
         ```
+
+
+- 신고된 게시글 리스트 조회
+    - **API** : `/api/admin/reportpostlist`
+    - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/notice/list?page=0
+       ```
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "content": [
+                {
+                    "reportPostId": 신고된 게시글의 ID (신고된 게시글 테이블의 자체 아이디),
+                    "reportUserId": 신고한 유저의 id,
+                    "reportedUserId": 신고당한 유저의 id,
+                    "postId": 신고된 게시글의 id (게시글 자체 id),
+                    "reason": 신고 사유,
+                    "reportStatus": 상태
+                },
+
+                ...,
+  
+            ],
+            "pageable": {
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
+                "sort": {
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 페이지의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
+                },
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
+            "sort": {
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
+            },
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+        }
+        ```
+
+  - 신고된 댓글 리스트 조회
+    - **API** : `/api/admin/reportcommentlist`
+    - **Method : GET**
+    - **Request**
+       ```jsonc
+       http://~/api/notice/list?page=0
+       ```
+    - **Response**
+      
+        - ***200 OK***
+          
+        ```jsonc
+        {
+            "content": [
+                {
+                    "reportCommentId": 신고된 댓글의 ID (신고된 댓글 테이블의 자체 아이디),
+                    "reportUserId": 신고한 유저의 id,
+                    "reportedUserId": 신고당한 유저의 id,
+                    "commentId": 신고된 댓글의 id (댓글 자체의 id),
+                    "reason": 신고 사유,
+                    "reportStatus": 상태
+                },
+
+                ...,
+  
+            ],
+            "pageable": {
+                "pageNumber": 현재 페이지 ,
+                "pageSize": 한 페이지당 가능한 게시글 수,
+                "sort": {
+                    "empty": 정렬 정보가 비어있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부,
+                    },
+                "offset": 현재 페이지의 게시글 시작 위치,
+                "paged": 페이징 여부,
+                "unpaged": 페이징 여부
+                },
+            "last": 현재 페이지가 마지막 페이지 인지,
+            "totalPages": 총 페이지의 개수,
+            "totalElements": 게시글 총 개수,
+            "first": 첫 게시글인지 여부,
+            "size": 페이지 당 표시 가능한 게시글 수,
+            "number": 현재 페이지 번호,
+            "sort": {
+                "empty": 정렬 정보가 비어 있는지 여부,
+                "sorted": 페이징 결과 정렬 여부,
+                "unsorted": 페이징 결과 정렬 여부
+            },
+            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+        }
+        ```
