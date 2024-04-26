@@ -240,3 +240,33 @@
     ```jsonc
     게시글을 찾을 수 없습니다.
     ```
+
+    - 신고된 게시글 처리
+    - **API** : `/api/admin/postban`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
+        ```jsonc
+        {
+            "reportPostId" : 신고된 게시글의 id(Long),
+            "reportedUserId" : 신고된 유저의 id,
+            "reason" : 신고 사유,
+            "banDays" : 정지 기간 (Long)
+        }
+        ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        사용자를 정지 시켰습니다. 
+        or
+        정지기간을 연장하였습니다.
+        ```
+
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        사용자를 찾을 수 없습니다.
+        ```
