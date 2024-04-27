@@ -22,7 +22,7 @@
 
 - 공지사항 수정
     - **API** : `/api/admin/notice/{noticeId}`
-    - **Method : POST**
+    - **Method : POST**
     - **Body :  raw (json)**
     
     - **Response**
@@ -41,6 +41,7 @@
         ```jsonc
         공지사항 삭제가 완료되었습니다. 
         ```
+        
 - 유저 리스트
     - **API** : `/api/admin/userlist`
     - **Method : GET**
@@ -50,9 +51,6 @@
        ```
     - **Response**
         - ***200 OK***
-        
-                - ***200 OK***
-          
         ```jsonc
         {
             "content": [
@@ -121,49 +119,90 @@
     - **API** : `/api/admin/banuserlist`
     - **Method : GET**
     - **Response**
-               - ***200 OK***
-          
+        - ***200 OK***
+              
+            ```jsonc
+            {
+                "content": [
+                    {
+                        "id" : 정지된 유저 id,
+                        "nickname" : 정지된 유저 닉네임,
+                        "name" : 정지된 유저 이름,
+                        "phone" : 정지된 유저 전화번호,
+                        "startDate" : 정지 시작일,
+                        "endDate" : 정지 종료일 
+                    },
+    
+                    ...,
+      
+                ],
+                "pageable": {
+                    "pageNumber": 현재 페이지 ,
+                    "pageSize": 한 페이지당 가능한 게시글 수,
+                    "sort": {
+                        "empty": 정렬 정보가 비어있는지 여부,
+                        "sorted": 페이징 결과 정렬 여부,
+                        "unsorted": 페이징 결과 정렬 여부,
+                        },
+                    "offset": 현재 페이지의 게시글 시작 위치,
+                    "paged": 페이징 여부,
+                    "unpaged": 페이징 여부
+                    },
+                "last": 현재 페이지가 마지막 페이지 인지,
+                "totalPages": 총 페이지의 개수,
+                "totalElements": 게시글 총 개수,
+                "first": 첫 게시글인지 여부,
+                "size": 페이지 당 표시 가능한 게시글 수,
+                "number": 현재 페이지 번호,
+                "sort": {
+                    "empty": 정렬 정보가 비어 있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부
+                },
+                "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+                "empty": 현재 페이지의 결과가 비어 있는지 여부    
+            }
+            ```
+
+- 정지 유저 기간 변경
+    - **API** : `/api/admin/ban/period`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
         ```jsonc
         {
-            "content": [
-                {
-                    "id" : 정지된 유저 id,
-                    "nickname" : 정지된 유저 닉네임,
-                    "name" : 정지된 유저 이름,
-                    "phone" : 정지된 유저 전화번호,
-                    "startDate" : 정지 시작일,
-                    "endDate" : 정지 종료일 
-                },
-
-                ...,
-  
-            ],
-            "pageable": {
-                "pageNumber": 현재 페이지 ,
-                "pageSize": 한 페이지당 가능한 게시글 수,
-                "sort": {
-                    "empty": 정렬 정보가 비어있는지 여부,
-                    "sorted": 페이징 결과 정렬 여부,
-                    "unsorted": 페이징 결과 정렬 여부,
-                    },
-                "offset": 현재 페이지의 게시글 시작 위치,
-                "paged": 페이징 여부,
-                "unpaged": 페이징 여부
-                },
-            "last": 현재 페이지가 마지막 페이지 인지,
-            "totalPages": 총 페이지의 개수,
-            "totalElements": 게시글 총 개수,
-            "first": 첫 게시글인지 여부,
-            "size": 페이지 당 표시 가능한 게시글 수,
-            "number": 현재 페이지 번호,
-            "sort": {
-                "empty": 정렬 정보가 비어 있는지 여부,
-                "sorted": 페이징 결과 정렬 여부,
-                "unsorted": 페이징 결과 정렬 여부
-            },
-            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
-            "empty": 현재 페이지의 결과가 비어 있는지 여부    
+            "userId" : 기간을 변경하고자 하는 유저 id,
+            "days" : 정지 기간 (Long)
         }
+        ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        정지 기간을 변경하였습니다.
+        ```
+
+        - ***404 NON FOUND***
+        
+        ```jsonc
+        정지 유저에 존재하지 않습니다.
+        ```
+- 정지 유저 삭제
+    - **API** : `/api/admin/ban/{userId}`
+    - **Method : DELETE**
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        정지 유저에서 삭제하였습니다.
+        ```
+
+        - ***404 NON FOUND***
+        
+        ```jsonc
+        정지 유저에 존재하지 않습니다.
         ```
         
 - 공지사항 리스트 조회
@@ -177,46 +216,46 @@
       
         - ***200 OK***
           
-        ```jsonc
-        {
-            "content": [
-                {
-                    "noticeId": 공지사항 Id,
-                    "nickname": "ADMIN" (고정),
-                    "title": 공지사항의 제목,
-                    "createAt": 공지사항 작성일자
-                },
-
-                ...,
-  
-            ],
-            "pageable": {
-                "pageNumber": 현재 페이지 ,
-                "pageSize": 한 페이지당 가능한 게시글 수,
-                "sort": {
-                    "empty": 정렬 정보가 비어있는지 여부,
-                    "sorted": 페이징 결과 정렬 여부,
-                    "unsorted": 페이징 결과 정렬 여부,
+            ```jsonc
+            {
+                "content": [
+                    {
+                        "noticeId": 공지사항 Id,
+                        "nickname": "ADMIN" (고정),
+                        "title": 공지사항의 제목,
+                        "createAt": 공지사항 작성일자
                     },
-                "offset": 현재 페이지의 게시글 시작 위치,
-                "paged": 페이징 여부,
-                "unpaged": 페이징 여부
+    
+                    ...,
+      
+                ],
+                "pageable": {
+                    "pageNumber": 현재 페이지 ,
+                    "pageSize": 한 페이지당 가능한 게시글 수,
+                    "sort": {
+                        "empty": 정렬 정보가 비어있는지 여부,
+                        "sorted": 페이징 결과 정렬 여부,
+                        "unsorted": 페이징 결과 정렬 여부,
+                        },
+                    "offset": 현재 페이지의 게시글 시작 위치,
+                    "paged": 페이징 여부,
+                    "unpaged": 페이징 여부
+                    },
+                "last": 현재 페이지가 마지막 페이지 인지,
+                "totalPages": 총 페이지의 개수,
+                "totalElements": 게시글 총 개수,
+                "first": 첫 게시글인지 여부,
+                "size": 페이지 당 표시 가능한 게시글 수,
+                "number": 현재 페이지 번호,
+                "sort": {
+                    "empty": 정렬 정보가 비어 있는지 여부,
+                    "sorted": 페이징 결과 정렬 여부,
+                    "unsorted": 페이징 결과 정렬 여부
                 },
-            "last": 현재 페이지가 마지막 페이지 인지,
-            "totalPages": 총 페이지의 개수,
-            "totalElements": 게시글 총 개수,
-            "first": 첫 게시글인지 여부,
-            "size": 페이지 당 표시 가능한 게시글 수,
-            "number": 현재 페이지 번호,
-            "sort": {
-                "empty": 정렬 정보가 비어 있는지 여부,
-                "sorted": 페이징 결과 정렬 여부,
-                "unsorted": 페이징 결과 정렬 여부
-            },
-            "numberOfElements": 현재 페이지에 포함된 게시글의 수,
-            "empty": 현재 페이지의 결과가 비어 있는지 여부    
-        }
-        ```
+                "numberOfElements": 현재 페이지에 포함된 게시글의 수,
+                "empty": 현재 페이지의 결과가 비어 있는지 여부    
+            }
+            ```
 
 - 공지사항 상세 조회
     - **API** : `/api/notice/{notice_id}`
@@ -224,22 +263,22 @@
     - **Response**
       
         - ***200 OK***
-          
-    ```jsonc
-    {
-        "noticeId" : 공지사항 아이디,
-        "nickname" : "ADMIN" (고정),
-        "title" : 해당 공지사항의 제목,
-        "content" : 해당 공지사항의 내용,
-        "date" : 해당 공지사항의 작성일자
-    }
-    ```
+              
+        ```jsonc
+        {
+            "noticeId" : 공지사항 아이디,
+            "nickname" : "ADMIN" (고정),
+            "title" : 해당 공지사항의 제목,
+            "content" : 해당 공지사항의 내용,
+            "date" : 해당 공지사항의 작성일자
+        }
+        ```
         
-  - ***404 NOT FOUND***
-        
-    ```jsonc
-    게시글을 찾을 수 없습니다.
-    ```
+        - ***404 NOT FOUND***
+            
+        ```jsonc
+        게시글을 찾을 수 없습니다.
+        ```
 
 - 신고된 게시글 처리
     - **API** : `/api/admin/postban`
