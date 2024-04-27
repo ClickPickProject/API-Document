@@ -94,27 +94,6 @@
         }
         ```
 
-        
-- 게시물로 신고된 유저 정지 시키기
-    - **API** : `/api/admin/manager/postban`
-    - **Method : POST**
-    - **Request**
-    
-        ```jsonc
-        {
-            "reportedUserId" : "ban@naver.com",
-            "reason" : "테스트",
-            "endDate" : "2024-03-31T23:59:59"    //시간 관련 프론트에서 어떻게 넘길지 고려
-        }
-        ```
-    
-    - **Response**
-        - ***200 OK***
-        
-        ```jsonc
-        사용자를 정지 시켰습니다. 
-        ```
-
 - 정지된 유저 리스트
     - **API** : `/api/admin/banuserlist`
     - **Method : GET**
@@ -288,7 +267,37 @@
     
         ```jsonc
         {
-            "reportPostId" : 신고된 게시글의 id(Long),
+            "reportId" : 신고된 게시글의 ID (신고된 게시글 테이블의 자체 아이디),
+            "reportedUserId" : 신고된 유저의 id,
+            "reason" : 신고 사유,
+            "banDays" : 정지 기간 (Long)
+        }
+        ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        사용자를 정지 시켰습니다. 
+        or
+        정지기간을 연장하였습니다.
+        ```
+
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        사용자를 찾을 수 없습니다.
+        ```
+
+- 신고된 댓글 처리
+    - **API** : `/api/admin/commentban`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
+        ```jsonc
+        {
+            "reportId" : 신고된 댓글의 ID (신고된 댓글 테이블의 자체 아이디),
             "reportedUserId" : 신고된 유저의 id,
             "reason" : 신고 사유,
             "banDays" : 정지 기간 (Long)
