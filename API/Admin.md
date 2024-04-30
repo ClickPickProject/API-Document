@@ -427,3 +427,16 @@
             "empty": 현재 페이지의 결과가 비어 있는지 여부    
         }
         ```
+
+
+    - 월별 가입자 카운팅
+    - **API** : `/api/admin/user/month/{year}`
+    - **Method : GET**
+    - **Response**
+        - ***200 OK***
+        ```jsonc
+            {
+            "userCount": 해당 월의 가입자 수,
+            "monthYear": 입력받은 년도와 해당 월
+            }
+        ```
