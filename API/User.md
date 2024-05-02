@@ -615,4 +615,23 @@
             capacity : 이미지 용량
         }
         ```
+
+- access 토큰 연장
+    - **API** : `/api/reissue`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
+    ```jsonc
+    쿠키의 refresh토큰
+    ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        토큰을 연장하였습니다.
+        ```
+        
+
         
