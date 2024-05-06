@@ -236,6 +236,7 @@
                     "title" : 질문 제목,
                     "createAt" : 잘성 날짜,
                     "status" :  질문 상태 표시(COMPLETE, AWAITING),
+                    "lockStatus: 비공개 상태 표시 (LOCKED, UNLOCK),
                     "profileUrl" : 프로필 url    
                 },
 
