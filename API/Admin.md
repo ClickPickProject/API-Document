@@ -407,7 +407,7 @@
         }
         ```
 
-  - 신고된 댓글 리스트 조회
+- 신고된 댓글 리스트 조회
     - **API** : `/api/admin/reportcommentlist`
     - **Method : GET**
     - **Request**
@@ -462,14 +462,14 @@
         ```
 
 
-    - 월별 가입자 카운팅
-    - **API** : `/api/admin/user/month/{year}`
-    - **Method : GET**
-    - **Response**
-        - ***200 OK***
-        ```jsonc
-            {
-            "userCount": 해당 월의 가입자 수,
-            "monthYear": 입력받은 년도와 해당 월
-            }
-        ```
+- 월별 가입자 카운팅
+  - **API** : `/api/admin/user/month/{year}`
+  - **Method : GET**
+  - **Response**
+      - ***200 OK***
+         ```jsonc
+           {
+               "userCount": 해당 월의 가입자 수,
+               "monthYear": 입력받은 년도와 해당 월
+           }
+         ```
