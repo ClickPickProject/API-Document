@@ -8,8 +8,8 @@
     
         ```jsonc
         {
-            "title" : "공지사항입니다.",
-            "content" : "공지입니다."
+            "title" : 공지사항 제목,
+            "content" : 공지사항 내용
         }
         ```
     
@@ -318,6 +318,39 @@
         ```jsonc
         사용자를 찾을 수 없습니다.
         ```
+        
+- 신고 철회
+    - **API** : `/api/admin/withdrawal`
+    - **Method : POST**
+    - **Body :  raw (json)**
+    - **Request**
+    
+        ```jsonc
+        {
+            "id" : 신고 하고자 하는 게시글,댓글 id,
+            "type" : "comment" or "post" (댓글 or 게시글)
+        }
+        ```
+    
+    - **Response**
+        - ***200 OK***
+        
+        ```jsonc
+        해당 게시글 신고를 철회하였습니다.
+        or
+        해당 댓글 신고를 철회하였습니다.
+        ```
+        - ***404 NOT FOUND***
+        
+        ```jsonc
+        존재하지 않는 댓글 신고 입니다.
+        or
+        존재하지 않는 게시글 신고 입니다.
+        or
+        잘못된 타입값입니다.
+        ```
+
+        
 
 
 - 신고된 게시글 리스트 조회
