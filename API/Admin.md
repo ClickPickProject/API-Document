@@ -469,7 +469,6 @@
       - ***200 OK***
          ```jsonc
            {
-               "userCount": 해당 월의 가입자 수,
-               "monthYear": 입력받은 년도와 해당 월
+               "year-month": 가입자 수,
            }
          ```
