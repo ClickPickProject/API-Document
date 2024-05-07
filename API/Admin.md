@@ -472,3 +472,25 @@
                "year-month": 가입자 수,
            }
          ```
+         
+- 월별 신고된 게시글 카운팅
+  - **API** : `/api/admin/report/post/{year}`
+  - **Method : GET**
+  - **Response**
+      - ***200 OK***
+         ```jsonc
+           {
+               "year-month": 신고된 게시글 수,
+           }
+         ```
+         
+- 월별 신고된 댓글 카운팅
+  - **API** : `/api/admin/report/comment/{year}`
+  - **Method : GET**
+  - **Response**
+      - ***200 OK***
+         ```jsonc
+           {
+               "year-month": 신고된 댓글 수,
+           }
+         ```
