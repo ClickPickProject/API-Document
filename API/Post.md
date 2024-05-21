@@ -503,7 +503,7 @@
     - **Method : GET**
     - **Request**
        ```jsonc
-       http://~/api/post/category?page=0?hashtag="category" ("" 제외하고 입력)
+       http://~/api/post/category?page=0?cagegory="category" ("" 제외하고 입력)
        ```
     - **Response**
       
