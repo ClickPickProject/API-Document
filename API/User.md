@@ -190,7 +190,7 @@
         ```
         
 - 인증코드 확인
-    - **API** : `/api/login/id`
+    - **API** : `/api/verification`
     - **Method : POST**
     - **Body :  raw (json)**
 
@@ -217,7 +217,7 @@
         ```
         
 - 비밀번호 변경
-    - **API** : `/api/login/id`
+    - **API** : `/api/login/new-password`
     - **Method : POST**
     - **Body :  raw (json)**
 
@@ -316,7 +316,7 @@
         ```
         
   - 회원 탈퇴
-    - **API** : `/api/member
+    - **API** : `/api/member`
     - **Method : DELETE**
 
     - **Response**
